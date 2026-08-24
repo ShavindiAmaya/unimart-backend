@@ -1,13 +1,22 @@
 package lk.ac.kln.unimart.health.controller;
 
+import java.time.Instant;
+import java.util.Map;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/v1/public")
 public class HealthController {
 
     @GetMapping("/ping")
-    public String ping() {
-        return "UniMart Backend is running!";
+    public Map<String, Object> ping() {
+        return Map.of(
+                "service", "unimart-backend",
+                "status", "UP",
+                "time", Instant.now()
+        );
     }
 }
