@@ -36,3 +36,8 @@ build/
 .env
 .env.*
 !.env.example
+application-secrets.yml
+*.pem
+*.key
+logs/
+.DS_Store
